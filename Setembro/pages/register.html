@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verazo</title>
+</head>
+<body>
+    <div class="img">
+
+    </div>
+
+    <div class="title">
+            <h1>Crie sua conta Verazo</h1>
+    </div>
+
+    <form action="#" method="POST">
+        <div class="container">
+            <h2>Preencha seus dados para começar</h2>
+
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail Corporativo</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" minlength="6" required>
+
+            <label for="confirmar-senha">Confirmar Senha</label>
+            <input type="password" id="confirmar-senha" name="confirmar-senha" minlength="6" required>
+
+            <div class="terms">
+                <input type="checkbox" id="termos" name="termos" name="termos">
+                <label for="termos">Eu concordo com os <a href="#">Termos de uso</a></label>
+            </div>
+
+            <div class="button-create"><button type="submit">Criar conta</button></div>
+    </form>
+
+    <div class="link-login"><p>Já tem uma conta? <a href="/login">Faça login</a></p></div>
+
+
+</body>
+</html>
