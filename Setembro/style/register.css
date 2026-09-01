@@ -1,0 +1,502 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+/* Remove as configurações padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura o corpo da página */
+body {
+    /* Define a fonte da página */
+    font-family: Arial, sans-serif;
+
+    /* Faz a página ocupar toda a altura da tela */
+    min-height: 100vh;
+
+    /* Define o fundo branco */
+    background-color: white;
+
+    /* Impede rolagem horizontal */
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   FUNDO COM A IMAGEM DO VERAZO
+   ========================================================= */
+
+/*
+   Cria a área da esquerda usando a imagem fundo.jpeg.
+   
+   IMPORTANTE:
+   Este CSS está dentro da pasta "style".
+   A pasta "images" está fora dela.
+   Por isso usamos "../images/fundo.jpeg".
+*/
+body::before {
+    /* Necessário para o pseudo-elemento aparecer */
+    content: "";
+
+    /* Mantém a imagem fixa na tela */
+    position: fixed;
+
+    /* Posiciona no canto superior esquerdo */
+    top: 0;
+    left: 0;
+
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Ocupa toda a altura */
+    height: 100vh;
+
+    /* Caminho correto para a imagem */
+    background-image: url("../images/fundo.jpeg");
+
+    /* Faz a imagem preencher toda a área */
+    background-size: cover;
+
+    /* Centraliza a imagem */
+    background-position: center;
+
+    /* Não deixa a imagem se repetir */
+    background-repeat: no-repeat;
+
+    /* Coloca a imagem atrás dos elementos */
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ÁREA DO LOGO
+   ========================================================= */
+
+/*
+   A div .img está no lado direito.
+   Ela fica separada do fundo azul.
+*/
+.img {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Começa depois da metade esquerda */
+    margin-left: 50%;
+
+    /* Espaçamento no topo */
+    padding-top: 40px;
+
+    /* Centraliza o conteúdo */
+    text-align: center;
+
+    /* Permite controlar a posição */
+    position: relative;
+
+    /* Mantém na frente da imagem */
+    z-index: 1;
+}
+
+
+/* =========================================================
+   LOGO VERAZO
+   ========================================================= */
+
+/*
+   Se você colocar a imagem logo_verazo.jpeg dentro
+   da div .img no HTML, este código controla o tamanho dela.
+*/
+.img img {
+    /* Define a largura máxima do logo */
+    width: 180px;
+
+    /* Impede que fique maior que o espaço disponível */
+    max-width: 80%;
+
+    /* Mantém a proporção da imagem */
+    height: auto;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+/* Área do título */
+.title {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento superior */
+    margin-top: 30px;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Mantém na frente do fundo */
+    position: relative;
+
+    /* Coloca acima da imagem */
+    z-index: 1;
+}
+
+
+/* Título principal */
+.title h1 {
+    /* Tamanho do título */
+    font-size: 32px;
+
+    /* Deixa o título em negrito */
+    font-weight: bold;
+
+    /* Cor escura */
+    color: #111827;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+/* Formulário */
+form {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento superior */
+    margin-top: 35px;
+
+    /* Mantém na frente do fundo */
+    position: relative;
+
+    /* Coloca acima da imagem */
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTAINER DOS CAMPOS
+   ========================================================= */
+
+/* Container dos campos */
+.container {
+    /* Define a largura dos campos */
+    width: 70%;
+
+    /* Centraliza dentro do lado direito */
+    margin: 0 auto;
+}
+
+
+/* Texto "Preencha seus dados..." */
+.container h2 {
+    /* Tamanho do texto */
+    font-size: 18px;
+
+    /* Peso normal */
+    font-weight: normal;
+
+    /* Cor */
+    color: #333;
+
+    /* Espaçamento inferior */
+    margin-bottom: 25px;
+
+    /* Centraliza */
+    text-align: center;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+/* Textos que ficam acima dos campos */
+.container label {
+    /* Faz o label ocupar uma linha */
+    display: block;
+
+    /* Tamanho */
+    font-size: 14px;
+
+    /* Deixa mais destacado */
+    font-weight: bold;
+
+    /* Cor */
+    color: #333;
+
+    /* Espaçamento superior */
+    margin-top: 15px;
+
+    /* Espaçamento inferior */
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   CAMPOS DE TEXTO
+   ========================================================= */
+
+/* Configura os campos de texto, email e senha */
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"] {
+    /* Ocupa toda a largura disponível */
+    width: 100%;
+
+    /* Altura dos campos */
+    height: 45px;
+
+    /* Espaçamento interno */
+    padding: 10px 12px;
+
+    /* Tamanho do texto */
+    font-size: 15px;
+
+    /* Borda */
+    border: 1px solid #cccccc;
+
+    /* Cantos arredondados */
+    border-radius: 5px;
+
+    /* Remove o contorno padrão */
+    outline: none;
+
+    /* Fundo branco */
+    background-color: white;
+}
+
+
+/* =========================================================
+   EFEITO AO CLICAR NO CAMPO
+   ========================================================= */
+
+/* Quando o usuário seleciona um campo */
+.container input[type="text"]:focus,
+.container input[type="email"]:focus,
+.container input[type="password"]:focus {
+
+    /* Muda a cor da borda */
+    border-color: #0b2d6b;
+}
+
+
+/* =========================================================
+   TERMOS DE USO
+   ========================================================= */
+
+/* Área dos termos */
+.terms {
+    /* Mesma largura dos campos */
+    width: 70%;
+
+    /* Centraliza */
+    margin: 20px auto 0;
+
+    /* Coloca checkbox e texto lado a lado */
+    display: flex;
+
+    /* Alinha verticalmente */
+    align-items: center;
+
+    /* Tamanho do texto */
+    font-size: 13px;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Checkbox */
+.terms input[type="checkbox"] {
+    /* Espaço entre checkbox e texto */
+    margin-right: 8px;
+
+    /* Largura */
+    width: 15px;
+
+    /* Altura */
+    height: 15px;
+}
+
+
+/* Texto dos termos */
+.terms label {
+    /* Remove margens */
+    margin: 0;
+
+    /* Peso normal */
+    font-weight: normal;
+
+    /* Cor */
+    color: #444;
+}
+
+
+/* Link "Termos de Uso" */
+.terms a {
+    /* Cor azul */
+    color: #0b2d6b;
+
+    /* Deixa destacado */
+    font-weight: bold;
+
+    /* Remove sublinhado */
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BOTÃO CRIAR CONTA
+   ========================================================= */
+
+/* Área do botão */
+.button-create {
+    /* Mesma largura dos campos */
+    width: 70%;
+
+    /* Centraliza */
+    margin: 25px auto 0;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Botão */
+.button-create button {
+    /* Ocupa toda a largura */
+    width: 100%;
+
+    /* Altura */
+    height: 48px;
+
+    /* Remove borda */
+    border: none;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Cor azul */
+    background-color: #0b2d6b;
+
+    /* Texto branco */
+    color: white;
+
+    /* Tamanho */
+    font-size: 15px;
+
+    /* Negrito */
+    font-weight: bold;
+
+    /* Cursor de mão */
+    cursor: pointer;
+}
+
+
+/* Efeito ao passar o mouse */
+.button-create button:hover {
+    /* Escurece o botão */
+    background-color: #082354;
+}
+
+
+/* =========================================================
+   LINK PARA LOGIN
+   ========================================================= */
+
+/* Área do link */
+.link-login {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona à direita */
+    margin-left: 50%;
+
+    /* Espaçamento superior */
+    margin-top: 20px;
+
+    /* Centraliza */
+    text-align: center;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Texto */
+.link-login p {
+    /* Tamanho */
+    font-size: 14px;
+
+    /* Cor */
+    color: #555;
+}
+
+
+/* Link "Faça login" */
+.link-login a {
+    /* Cor azul */
+    color: #0b2d6b;
+
+    /* Negrito */
+    font-weight: bold;
+
+    /* Remove sublinhado */
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* Configuração para telas pequenas */
+@media (max-width: 768px) {
+
+    /* Esconde a imagem lateral */
+    body::before {
+        display: none;
+    }
+
+    /* Logo ocupa toda a largura */
+    .img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Título ocupa toda a largura */
+    .title {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Formulário ocupa toda a largura */
+    form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Link ocupa toda a largura */
+    .link-login {
+        width: 100%;
+        margin-left: 0;
+    }
+}
