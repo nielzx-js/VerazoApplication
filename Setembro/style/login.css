@@ -110,3 +110,41 @@ body::before {
     /* Mantém a proporção original da imagem */
     height: auto;
 }
+
+/* =========================================================
+   TÍTULO "BEM-VINDO(A) DE VOLTA!"
+   ========================================================= */
+
+/* Configura a área do título */
+.title {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento acima do título */
+    margin-top: 30px;
+
+    /* Centraliza o título */
+    text-align: center;
+
+    /* Mantém o título acima da imagem */
+    position: relative;
+
+    /* Coloca o conteúdo na frente do fundo */
+    z-index: 1;
+}
+
+
+/* Configura o título principal */
+.title h1 {
+    /* Define o tamanho do título */
+    font-size: 32px;
+
+    /* Deixa o título em negrito */
+    font-weight: bold;
+
+    /* Define a cor do texto */
+    color: #111827;
+}
