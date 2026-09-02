@@ -1,3 +1,7 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS DA PÁGINA
+   ========================================================= */
+
 /* Remove as margens e espaçamentos padrões do navegador */
 * {
     margin: 0;
@@ -20,6 +24,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* =========================================================
    IMAGEM DO LADO ESQUERDO
    ========================================================= */
@@ -28,13 +33,8 @@ body {
    Cria a metade esquerda da tela utilizando a imagem
    fundo.jpeg.
 
-   O login.html está dentro da pasta "pages".
-   O login.css está dentro da pasta "style".
-
-   Como a imagem está em:
-   images/fundo.jpeg
-
-   precisamos voltar uma pasta usando "../".
+   Como o login.css está dentro da pasta "style" e
+   a imagem está dentro da pasta "images", usamos "../".
 */
 body::before {
     /* Necessário para o pseudo-elemento aparecer */
@@ -111,6 +111,7 @@ body::before {
     height: auto;
 }
 
+
 /* =========================================================
    TÍTULO "BEM-VINDO(A) DE VOLTA!"
    ========================================================= */
@@ -148,6 +149,7 @@ body::before {
     /* Define a cor do texto */
     color: #111827;
 }
+
 
 /* =========================================================
    FORMULÁRIO
@@ -276,6 +278,7 @@ form {
     border-color: #0b2d6b;
 }
 
+
 /* =========================================================
    LINK "ESQUECEU A SENHA?"
    ========================================================= */
@@ -285,11 +288,11 @@ form {
     /* Define a mesma largura dos campos */
     width: 70%;
 
-    /* Centraliza dentro do formulário */
+    /* Centraliza a área dentro do formulário */
     margin: 15px auto 0;
 
-    /* Alinha o conteúdo à direita */
-    text-align: right;
+    /* Centraliza o texto */
+    text-align: center;
 
     /* Mantém acima da imagem */
     position: relative;
@@ -432,6 +435,7 @@ form {
     /* Remove o sublinhado */
     text-decoration: none;
 }
+
 
 /* =========================================================
    RESPONSIVIDADE
