@@ -38,5 +38,30 @@
 
     </form>
 
+   <script>
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.querySelector('input[type="email"]').value;
+    const code = document.querySelector('input[type="text"]').value;
+
+    const res = await fetch('/api/auth/verify-reset-code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, code })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      window.location.href = data.redirectTo; // Redireciona para /newPassword
+    } else {
+      alert(data.message);
+    }
+  });
+</script>
+
 </body>
 </html> 
