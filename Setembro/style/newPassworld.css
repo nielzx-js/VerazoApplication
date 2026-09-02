@@ -1,0 +1,148 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS DA PÁGINA
+   ========================================================= */
+
+/* Remove as margens e espaçamentos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura o corpo da página */
+body {
+    /* Define a fonte utilizada na página */
+    font-family: Arial, sans-serif;
+
+    /* Faz a página ocupar toda a altura da tela */
+    min-height: 100vh;
+
+    /* Define o fundo branco */
+    background-color: white;
+
+    /* Impede o surgimento de rolagem horizontal */
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   IMAGEM DO LADO ESQUERDO
+   ========================================================= */
+
+/*
+   Cria a metade esquerda da tela utilizando o fundo
+   do projeto.
+
+   Como este CSS está dentro da pasta "style" e a imagem
+   está dentro da pasta "images", usamos "../".
+*/
+body::before {
+    /* Necessário para o pseudo-elemento aparecer */
+    content: "";
+
+    /* Mantém a imagem fixa na tela */
+    position: fixed;
+
+    /* Posiciona a imagem no canto superior esquerdo */
+    top: 0;
+    left: 0;
+
+    /* A imagem ocupa metade da tela */
+    width: 50%;
+
+    /* A imagem ocupa toda a altura */
+    height: 100vh;
+
+    /* Caminho correto para o fundo */
+    background-image: url("../images/fundo.jpeg");
+
+    /* Faz a imagem preencher toda a área */
+    background-size: cover;
+
+    /* Centraliza a imagem */
+    background-position: center;
+
+    /* Impede que a imagem se repita */
+    background-repeat: no-repeat;
+
+    /* Coloca a imagem atrás dos outros elementos */
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ÁREA DO LOGO
+   ========================================================= */
+
+/* Área onde fica o logo do Verazo */
+.img {
+    /* Ocupa metade da largura da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento entre o topo e o logo */
+    padding-top: 40px;
+
+    /* Centraliza o logo */
+    text-align: center;
+
+    /* Permite controlar a posição */
+    position: relative;
+
+    /* Mantém o logo na frente do fundo */
+    z-index: 1;
+}
+
+
+/* Configuração da imagem do logo */
+.img img {
+    /* Define a largura do logo */
+    width: 180px;
+
+    /* Impede que o logo fique grande demais */
+    max-width: 80%;
+
+    /* Mantém a proporção original */
+    height: auto;
+}
+
+
+/* =========================================================
+   TÍTULO "REDEFINIÇÃO DE SENHA"
+   ========================================================= */
+
+/* Área do título */
+.title {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento acima do título */
+    margin-top: 30px;
+
+    /* Centraliza o título */
+    text-align: center;
+
+    /* Mantém acima do fundo */
+    position: relative;
+
+    /* Coloca o conteúdo na frente */
+    z-index: 1;
+}
+
+
+/* Título principal */
+.title h1 {
+    /* Define o tamanho do título */
+    font-size: 32px;
+
+    /* Deixa o título em negrito */
+    font-weight: bold;
+
+    /* Define a cor */
+    color: #111827;
+}
