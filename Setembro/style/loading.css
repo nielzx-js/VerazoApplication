@@ -1,0 +1,207 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS DA PÁGINA
+   ========================================================= */
+
+/* Remove margens e espaçamentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações principais do corpo da página */
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   LADO ESQUERDO — IMAGEM DE FUNDO
+   ========================================================= */
+
+/*
+   O ::before cria uma área independente no lado esquerdo
+   da tela para colocar a imagem azul do conceito.
+*/
+body::before {
+    content: "";
+
+    /* Fixa a imagem na tela */
+    position: fixed;
+
+    /* Faz a imagem ocupar todo o lado esquerdo */
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+
+    /*
+       Caminho da imagem:
+       loading.css está dentro de "style"
+       fundo.jpeg está dentro de "images"
+
+       Por isso usamos:
+       ../images/fundo.jpeg
+    */
+    background-image: url("../images/fundo.jpeg");
+
+    /* Faz a imagem preencher toda a área */
+    background-size: cover;
+
+    /* Centraliza a imagem */
+    background-position: center;
+
+    /* Evita repetição da imagem */
+    background-repeat: no-repeat;
+
+    /* Fica atrás dos elementos da página */
+    z-index: 0;
+}
+
+
+/* =========================================================
+   LOGO VERAZO
+   ========================================================= */
+
+/*
+   O logo fica no lado direito da tela.
+*/
+.img {
+    width: 50%;
+
+    /* Começa depois da metade esquerda */
+    margin-left: 50%;
+
+    /* Espaçamento superior */
+    padding-top: 40px;
+
+    /* Centraliza o logo */
+    text-align: center;
+
+    /* Garante que fique acima do background */
+    position: relative;
+    z-index: 1;
+}
+
+/* Tamanho da imagem do logo */
+.img img {
+    width: 180px;
+    max-width: 80%;
+    height: auto;
+}
+
+
+/* =========================================================
+   TÍTULO — SENHA REDEFINIDA COM SUCESSO
+   ========================================================= */
+
+/*
+   O título ocupa somente a metade direita.
+*/
+.title {
+    width: 50%;
+    margin-left: 50%;
+
+    /* Espaçamento entre o logo e o título */
+    margin-top: 80px;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo do título principal */
+.title h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #111;
+
+    /* Evita que o texto fique muito largo */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   MENSAGEM DE REDIRECIONAMENTO
+   ========================================================= */
+
+/*
+   Bloco que contém:
+   "Redirecionando para o verazo..."
+*/
+.comment {
+    width: 50%;
+    margin-left: 50%;
+
+    /* Espaçamento abaixo do título */
+    margin-top: 30px;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo do texto de redirecionamento */
+.comment h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — CELULARES E TELAS PEQUENAS
+   ========================================================= */
+
+/*
+   Quando a tela ficar pequena, a imagem azul é retirada
+   para que o conteúdo tenha espaço suficiente.
+*/
+@media (max-width: 768px) {
+
+    /* Remove a imagem azul do lado esquerdo */
+    body::before {
+        display: none;
+    }
+
+    /* Logo ocupa toda a largura */
+    .img {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 30px;
+    }
+
+    /* Título ocupa toda a largura */
+    .title {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 60px;
+    }
+
+    /* Redirecionamento ocupa toda a largura */
+    .comment {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 25px;
+    }
+
+    /* Diminui o título em telas pequenas */
+    .title h1 {
+        font-size: 26px;
+    }
+
+    /* Diminui o texto de redirecionamento */
+    .comment h2 {
+        font-size: 16px;
+    }
+}
