@@ -146,3 +146,129 @@ body::before {
     /* Define a cor */
     color: #111827;
 }
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+/* Configuração do formulário */
+form {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento entre o título e o formulário */
+    margin-top: 35px;
+
+    /* Permite controlar a posição */
+    position: relative;
+
+    /* Mantém na frente do fundo */
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTAINER DOS CAMPOS
+   ========================================================= */
+
+/* Área que contém os campos */
+.container {
+    /* Define a largura dos campos */
+    width: 70%;
+
+    /* Centraliza dentro da metade direita */
+    margin: 0 auto;
+}
+
+
+/* Texto de explicação */
+.container h2 {
+    /* Define o tamanho do texto */
+    font-size: 18px;
+
+    /* Deixa o texto com peso normal */
+    font-weight: normal;
+
+    /* Define a cor */
+    color: #333;
+
+    /* Espaçamento abaixo */
+    margin-bottom: 25px;
+
+    /* Centraliza o texto */
+    text-align: center;
+}
+
+
+/* =========================================================
+   LABELS DOS CAMPOS
+   ========================================================= */
+
+/* Configura os textos "Nova Senha" e "Confirmar Nova Senha" */
+.container label {
+    /* Faz cada label ocupar uma linha */
+    display: block;
+
+    /* Define o tamanho da fonte */
+    font-size: 14px;
+
+    /* Deixa o texto destacado */
+    font-weight: bold;
+
+    /* Define a cor */
+    color: #333;
+
+    /* Espaçamento acima */
+    margin-top: 15px;
+
+    /* Espaçamento entre label e campo */
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   CAMPOS DE SENHA
+   ========================================================= */
+
+/* Configura os dois campos de senha */
+.container input[type="password"] {
+    /* Ocupa toda a largura disponível */
+    width: 100%;
+
+    /* Define a altura */
+    height: 45px;
+
+    /* Espaçamento interno */
+    padding: 10px 12px;
+
+    /* Tamanho do texto */
+    font-size: 15px;
+
+    /* Define a borda */
+    border: 1px solid #cccccc;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Remove o contorno padrão */
+    outline: none;
+
+    /* Fundo branco */
+    background-color: white;
+}
+
+
+/* =========================================================
+   EFEITO AO SELECIONAR UM CAMPO
+   ========================================================= */
+
+/* Quando o usuário clicar em um campo de senha */
+.container input[type="password"]:focus {
+
+    /* Muda a cor da borda */
+    border-color: #0b2d6b;
+}
