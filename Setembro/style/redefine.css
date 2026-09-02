@@ -1,0 +1,371 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS DA PÁGINA
+   ========================================================= */
+
+/* Remove as margens e espaçamentos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura o corpo da página */
+body {
+    /* Define a fonte utilizada na página */
+    font-family: Arial, sans-serif;
+
+    /* Faz a página ocupar toda a altura da tela */
+    min-height: 100vh;
+
+    /* Define o fundo branco */
+    background-color: white;
+
+    /* Impede o surgimento de rolagem horizontal */
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   IMAGEM DO LADO ESQUERDO
+   ========================================================= */
+
+/*
+   Cria a metade esquerda da tela utilizando a imagem
+   fundo.jpeg.
+
+   Como este CSS está dentro da pasta "style" e a imagem
+   está dentro da pasta "images", usamos "../".
+*/
+body::before {
+    /* Necessário para o pseudo-elemento aparecer */
+    content: "";
+
+    /* Mantém a imagem fixa na tela */
+    position: fixed;
+
+    /* Posiciona a imagem no canto superior esquerdo */
+    top: 0;
+    left: 0;
+
+    /* A imagem ocupa metade da tela */
+    width: 50%;
+
+    /* A imagem ocupa toda a altura */
+    height: 100vh;
+
+    /* Caminho correto para o fundo */
+    background-image: url("../images/fundo.jpeg");
+
+    /* Faz a imagem preencher toda a área */
+    background-size: cover;
+
+    /* Centraliza a imagem */
+    background-position: center;
+
+    /* Impede que a imagem se repita */
+    background-repeat: no-repeat;
+
+    /* Coloca a imagem atrás dos outros elementos */
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ÁREA DO LOGO
+   ========================================================= */
+
+/* Área onde fica o logo do Verazo */
+.img {
+    /* Ocupa metade da largura da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento entre o topo e o logo */
+    padding-top: 40px;
+
+    /* Centraliza o logo */
+    text-align: center;
+
+    /* Permite controlar a posição */
+    position: relative;
+
+    /* Mantém o logo na frente do fundo */
+    z-index: 1;
+}
+
+
+/* Configuração da imagem do logo */
+.img img {
+    /* Define a largura do logo */
+    width: 180px;
+
+    /* Impede que o logo fique grande demais */
+    max-width: 80%;
+
+    /* Mantém a proporção original */
+    height: auto;
+}
+
+
+/* =========================================================
+   TÍTULO "REDEFINIÇÃO DE SENHA"
+   ========================================================= */
+
+/* Área do título */
+.title {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento acima do título */
+    margin-top: 30px;
+
+    /* Centraliza o título */
+    text-align: center;
+
+    /* Mantém acima do fundo */
+    position: relative;
+
+    /* Coloca o conteúdo na frente */
+    z-index: 1;
+}
+
+
+/* Título principal */
+.title h1 {
+    /* Define o tamanho do título */
+    font-size: 32px;
+
+    /* Deixa o título em negrito */
+    font-weight: bold;
+
+    /* Define a cor */
+    color: #111827;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+/* Configuração do formulário */
+form {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento entre o título e o formulário */
+    margin-top: 35px;
+
+    /* Permite controlar a posição */
+    position: relative;
+
+    /* Mantém na frente do fundo */
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTAINER DOS CAMPOS
+   ========================================================= */
+
+/* Área que contém os campos */
+.container {
+    /* Define a largura dos campos */
+    width: 70%;
+
+    /* Centraliza dentro da metade direita */
+    margin: 0 auto;
+}
+
+
+/* Texto de explicação */
+.container h2 {
+    /* Define o tamanho do texto */
+    font-size: 18px;
+
+    /* Deixa o texto com peso normal */
+    font-weight: normal;
+
+    /* Define a cor */
+    color: #333;
+
+    /* Espaçamento abaixo */
+    margin-bottom: 25px;
+
+    /* Centraliza o texto */
+    text-align: center;
+}
+
+
+/* =========================================================
+   LABELS DOS CAMPOS
+   ========================================================= */
+
+/* Configura os textos dos campos */
+.container label {
+    /* Faz cada label ocupar uma linha */
+    display: block;
+
+    /* Define o tamanho da fonte */
+    font-size: 14px;
+
+    /* Deixa o texto destacado */
+    font-weight: bold;
+
+    /* Define a cor */
+    color: #333;
+
+    /* Espaçamento acima */
+    margin-top: 15px;
+
+    /* Espaçamento entre label e campo */
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   CAMPOS DE E-MAIL E CÓDIGO
+   ========================================================= */
+
+/* Configura o campo de email e o campo do código */
+.container input[type="email"],
+.container input[type="text"] {
+    /* Ocupa toda a largura disponível */
+    width: 100%;
+
+    /* Define a altura */
+    height: 45px;
+
+    /* Espaçamento interno */
+    padding: 10px 12px;
+
+    /* Tamanho do texto */
+    font-size: 15px;
+
+    /* Define a borda */
+    border: 1px solid #cccccc;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Remove o contorno padrão */
+    outline: none;
+
+    /* Fundo branco */
+    background-color: white;
+}
+
+
+/* =========================================================
+   EFEITO AO SELECIONAR OS CAMPOS
+   ========================================================= */
+
+/* Quando o usuário clicar no campo de email ou código */
+.container input[type="email"]:focus,
+.container input[type="text"]:focus {
+
+    /* Muda a cor da borda */
+    border-color: #0b2d6b;
+}
+
+
+/* =========================================================
+   BOTÃO "PRÓXIMO"
+   ========================================================= */
+
+/* Área do botão */
+.button-next {
+    /* Define a mesma largura dos campos */
+    width: 70%;
+
+    /* Centraliza o botão */
+    margin: 25px auto 0;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Configuração do botão */
+.button-next button {
+    /* Ocupa toda a largura */
+    width: 100%;
+
+    /* Define a altura */
+    height: 48px;
+
+    /* Remove a borda padrão */
+    border: none;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Define a cor azul */
+    background-color: #0b2d6b;
+
+    /* Define a cor do texto */
+    color: white;
+
+    /* Define o tamanho da fonte */
+    font-size: 15px;
+
+    /* Deixa o texto em negrito */
+    font-weight: bold;
+
+    /* Mostra o cursor de mão */
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EFEITO AO PASSAR O MOUSE NO BOTÃO
+   ========================================================= */
+
+/* Quando o mouse estiver sobre o botão */
+.button-next button:hover {
+
+    /* Escurece um pouco o botão */
+    background-color: #082354;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* Configurações para telas menores */
+@media (max-width: 768px) {
+
+    /* Esconde a imagem lateral */
+    body::before {
+        display: none;
+    }
+
+    /* Faz o logo ocupar toda a largura */
+    .img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o título ocupar toda a largura */
+    .title {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o formulário ocupar toda a largura */
+    form {
+        width: 100%;
+        margin-left: 0;
+    }
+}
