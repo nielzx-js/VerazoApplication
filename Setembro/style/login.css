@@ -275,3 +275,160 @@ form {
     /* Muda a cor da borda */
     border-color: #0b2d6b;
 }
+
+/* =========================================================
+   LINK "ESQUECEU A SENHA?"
+   ========================================================= */
+
+/* Área do link de redefinição */
+.forgot-password {
+    /* Define a mesma largura dos campos */
+    width: 70%;
+
+    /* Centraliza dentro do formulário */
+    margin: 15px auto 0;
+
+    /* Alinha o conteúdo à direita */
+    text-align: right;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Texto do link */
+.forgot-password p {
+    /* Define o tamanho da fonte */
+    font-size: 13px;
+
+    /* Define a cor */
+    color: #555;
+}
+
+
+/* Link "Redefinir" */
+.forgot-password a {
+    /* Define a cor azul */
+    color: #0b2d6b;
+
+    /* Deixa o link destacado */
+    font-weight: bold;
+
+    /* Remove o sublinhado */
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BOTÃO "ENTRAR NO VERAZO"
+   ========================================================= */
+
+/* Área do botão */
+.button-login {
+    /* Define a mesma largura dos campos */
+    width: 70%;
+
+    /* Centraliza o botão */
+    margin: 25px auto 0;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Configuração do botão */
+.button-login button {
+    /* Faz o botão ocupar toda a largura */
+    width: 100%;
+
+    /* Define a altura */
+    height: 48px;
+
+    /* Remove a borda padrão */
+    border: none;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Define a cor azul */
+    background-color: #0b2d6b;
+
+    /* Define a cor do texto */
+    color: white;
+
+    /* Define o tamanho da fonte */
+    font-size: 15px;
+
+    /* Deixa o texto em negrito */
+    font-weight: bold;
+
+    /* Mostra o cursor de mão */
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EFEITO AO PASSAR O MOUSE NO BOTÃO
+   ========================================================= */
+
+/* Quando o mouse estiver sobre o botão */
+.button-login button:hover {
+
+    /* Escurece um pouco o botão */
+    background-color: #082354;
+}
+
+
+/* =========================================================
+   LINK "AINDA NÃO POSSUI CONTA?"
+   ========================================================= */
+
+/* Área do link de cadastro */
+.link-register {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento acima */
+    margin-top: 20px;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Texto "Ainda não possui conta?" */
+.link-register p {
+    /* Define o tamanho da fonte */
+    font-size: 14px;
+
+    /* Define a cor */
+    color: #555;
+}
+
+
+/* Link "Cadastre-se" */
+.link-register a {
+    /* Define a cor azul */
+    color: #0b2d6b;
+
+    /* Deixa o link destacado */
+    font-weight: bold;
+
+    /* Remove o sublinhado */
+    text-decoration: none;
+}
