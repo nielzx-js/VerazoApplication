@@ -19,3 +19,94 @@ body {
     /* Impede o surgimento de rolagem horizontal */
     overflow-x: hidden;
 }
+
+/* =========================================================
+   IMAGEM DO LADO ESQUERDO
+   ========================================================= */
+
+/*
+   Cria a metade esquerda da tela utilizando a imagem
+   fundo.jpeg.
+
+   O login.html está dentro da pasta "pages".
+   O login.css está dentro da pasta "style".
+
+   Como a imagem está em:
+   images/fundo.jpeg
+
+   precisamos voltar uma pasta usando "../".
+*/
+body::before {
+    /* Necessário para o pseudo-elemento aparecer */
+    content: "";
+
+    /* Mantém a imagem fixa na tela */
+    position: fixed;
+
+    /* Posiciona a imagem no canto superior esquerdo */
+    top: 0;
+    left: 0;
+
+    /* A imagem ocupa metade da tela */
+    width: 50%;
+
+    /* A imagem ocupa toda a altura */
+    height: 100vh;
+
+    /* Caminho correto para a imagem */
+    background-image: url("../images/fundo.jpeg");
+
+    /* Faz a imagem preencher toda a área */
+    background-size: cover;
+
+    /* Centraliza a imagem */
+    background-position: center;
+
+    /* Impede que a imagem se repita */
+    background-repeat: no-repeat;
+
+    /* Coloca a imagem atrás dos outros elementos */
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ÁREA DO LOGO
+   ========================================================= */
+
+/*
+   A classe .img fica no lado direito.
+   Ela é utilizada para colocar o logo do Verazo.
+*/
+.img {
+    /* Ocupa metade da largura da tela */
+    width: 50%;
+
+    /* Posiciona a área depois da metade esquerda */
+    margin-left: 50%;
+
+    /* Espaçamento entre o topo e o logo */
+    padding-top: 40px;
+
+    /* Centraliza o logo */
+    text-align: center;
+
+    /* Permite controlar a posição do elemento */
+    position: relative;
+
+    /* Mantém o logo acima da imagem de fundo */
+    z-index: 1;
+}
+
+
+/* Configura a imagem do logo */
+.img img {
+    /* Define o tamanho do logo */
+    width: 180px;
+
+    /* Impede que o logo fique grande demais */
+    max-width: 80%;
+
+    /* Mantém a proporção original da imagem */
+    height: auto;
+}
