@@ -46,11 +46,11 @@ exports.login = (req, res) => {
 };
 
 // --- 3. VALIDAÇÃO DO CÓDIGO DE REDEFINIÇÃO ---
-// Validar código de redefinição -> deve apontar para /newPassword
 exports.verifyResetCode = (req, res) => {
   const { email, code } = req.body;
 
   if (code === '123456') {
+    // Cookie temporário de 15 minutos para autorizar o acesso à tela /newPassword
     const resetToken = jwt.sign(
       { email, purpose: 'reset' },
       process.env.JWT_SECRET || 'chave_secreta_verazo',
@@ -69,7 +69,7 @@ exports.verifyResetCode = (req, res) => {
   return res.status(400).json({ message: 'Código de redefinição inválido.' });
 };
 
-// Gravar nova senha -> deve apontar para /login
+// --- 4. GRAVAÇÃO DA NOVA SENHA ---
 exports.resetPassword = (req, res) => {
   const { newPassword, confirmPassword } = req.body;
 
@@ -81,6 +81,7 @@ exports.resetPassword = (req, res) => {
     return res.status(400).json({ message: 'As senhas não coincidem.' });
   }
 
+  // Remove o cookie temporário após alterar a senha com sucesso
   res.clearCookie('resetToken');
 
   return res.status(200).json({ 
