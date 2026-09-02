@@ -272,3 +272,98 @@ form {
     /* Muda a cor da borda */
     border-color: #0b2d6b;
 }
+
+
+/* =========================================================
+   BOTÃO "PRÓXIMO"
+   ========================================================= */
+
+/* Área do botão */
+.button-save {
+    /* Define a mesma largura dos campos */
+    width: 70%;
+
+    /* Centraliza o botão */
+    margin: 25px auto 0;
+
+    /* Mantém acima da imagem */
+    position: relative;
+
+    /* Coloca na frente */
+    z-index: 1;
+}
+
+
+/* Configuração do botão */
+.button-save button {
+    /* Ocupa toda a largura */
+    width: 100%;
+
+    /* Define a altura */
+    height: 48px;
+
+    /* Remove a borda padrão */
+    border: none;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Define a cor azul */
+    background-color: #0b2d6b;
+
+    /* Define a cor do texto */
+    color: white;
+
+    /* Define o tamanho da fonte */
+    font-size: 15px;
+
+    /* Deixa o texto em negrito */
+    font-weight: bold;
+
+    /* Mostra o cursor de mão */
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EFEITO AO PASSAR O MOUSE NO BOTÃO
+   ========================================================= */
+
+/* Quando o mouse estiver sobre o botão */
+.button-save button:hover {
+
+    /* Escurece um pouco o botão */
+    background-color: #082354;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* Configurações para telas menores */
+@media (max-width: 768px) {
+
+    /* Esconde a imagem lateral */
+    body::before {
+        display: none;
+    }
+
+    /* Faz o logo ocupar toda a largura */
+    .img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o título ocupar toda a largura */
+    .title {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o formulário ocupar toda a largura */
+    form {
+        width: 100%;
+        margin-left: 0;
+    }
+}
