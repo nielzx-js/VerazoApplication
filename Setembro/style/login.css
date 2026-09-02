@@ -432,3 +432,40 @@ form {
     /* Remove o sublinhado */
     text-decoration: none;
 }
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* Configurações para telas menores */
+@media (max-width: 768px) {
+
+    /* Esconde a imagem lateral */
+    body::before {
+        display: none;
+    }
+
+    /* Faz o logo ocupar toda a largura */
+    .img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o título ocupar toda a largura */
+    .title {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o formulário ocupar toda a largura */
+    form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Faz o link de cadastro ocupar toda a largura */
+    .link-register {
+        width: 100%;
+        margin-left: 0;
+    }
+}
