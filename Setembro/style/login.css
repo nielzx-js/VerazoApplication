@@ -1,0 +1,21 @@
+/* Remove as margens e espaçamentos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura o corpo da página */
+body {
+    /* Define a fonte utilizada na página */
+    font-family: Arial, sans-serif;
+
+    /* Faz a página ocupar toda a altura da tela */
+    min-height: 100vh;
+
+    /* Define o fundo branco */
+    background-color: white;
+
+    /* Impede o surgimento de rolagem horizontal */
+    overflow-x: hidden;
+}
