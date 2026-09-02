@@ -148,3 +148,130 @@ body::before {
     /* Define a cor do texto */
     color: #111827;
 }
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+/* Configura o formulário */
+form {
+    /* Ocupa metade da tela */
+    width: 50%;
+
+    /* Posiciona o formulário no lado direito */
+    margin-left: 50%;
+
+    /* Espaçamento entre o título e o formulário */
+    margin-top: 35px;
+
+    /* Permite controlar a posição */
+    position: relative;
+
+    /* Mantém o formulário na frente da imagem */
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTAINER DOS CAMPOS
+   ========================================================= */
+
+/* Área que contém os campos */
+.container {
+    /* Define a largura dos campos */
+    width: 70%;
+
+    /* Centraliza os campos dentro da metade direita */
+    margin: 0 auto;
+}
+
+
+/* Texto "Preencha seus dados para fazer login" */
+.container h2 {
+    /* Define o tamanho do texto */
+    font-size: 18px;
+
+    /* Deixa o texto com peso normal */
+    font-weight: normal;
+
+    /* Define a cor */
+    color: #333;
+
+    /* Espaçamento abaixo do texto */
+    margin-bottom: 25px;
+
+    /* Centraliza o texto */
+    text-align: center;
+}
+
+
+/* =========================================================
+   LABELS DOS CAMPOS
+   ========================================================= */
+
+/* Configura os textos "E-mail Corporativo" e "Senha" */
+.container label {
+    /* Faz cada label ocupar uma linha */
+    display: block;
+
+    /* Define o tamanho da fonte */
+    font-size: 14px;
+
+    /* Deixa o texto destacado */
+    font-weight: bold;
+
+    /* Define a cor */
+    color: #333;
+
+    /* Espaçamento acima do label */
+    margin-top: 15px;
+
+    /* Espaçamento entre o label e o campo */
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   CAMPOS DE E-MAIL E SENHA
+   ========================================================= */
+
+/* Configura os campos de email e senha */
+.container input[type="email"],
+.container input[type="password"] {
+    /* Faz o campo ocupar toda a largura disponível */
+    width: 100%;
+
+    /* Define a altura dos campos */
+    height: 45px;
+
+    /* Espaçamento interno */
+    padding: 10px 12px;
+
+    /* Tamanho do texto digitado */
+    font-size: 15px;
+
+    /* Define a borda */
+    border: 1px solid #cccccc;
+
+    /* Arredonda os cantos */
+    border-radius: 5px;
+
+    /* Remove o contorno padrão */
+    outline: none;
+
+    /* Mantém o fundo branco */
+    background-color: white;
+}
+
+
+/* =========================================================
+   EFEITO DOS CAMPOS AO SEREM SELECIONADOS
+   ========================================================= */
+
+/* Quando o usuário clicar dentro do campo */
+.container input[type="email"]:focus,
+.container input[type="password"]:focus {
+
+    /* Muda a cor da borda */
+    border-color: #0b2d6b;
+}
