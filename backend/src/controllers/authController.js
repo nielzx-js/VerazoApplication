@@ -1,4 +1,4 @@
-const UsuarioDAO = require('../config/database');
+const UsuarioDAO = require('../dao/usuarioDAO');
 
 
 
@@ -7,10 +7,14 @@ const jwt = require('jsonwebtoken');
 // --- 1. REGISTRO / CADASTRO ---
 exports.register = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { nome, email, password, confirmPassword } = req.body;
 
-    if (!email || !password) {
+    if (!nome || !email || !password || !confirmPassword) {
       return res.status(400).json({ success: false, message: 'Preencha todos os campos.' });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({ success: false, message: 'As senhas não coincidem.' });
     }
 
     const usuarioExistente = await UsuarioDAO.buscarPorEmail(email);
@@ -18,7 +22,7 @@ exports.register = async (req, res) => {
       return res.status(400).json({ success: false, message: 'email já cadastrado.' });
     }
 
-    await UsuarioDAO.criar(email, password);
+    await UsuarioDAO.criar(nome, email, password);
 
     return res.status(201).json({ 
       success: true, 

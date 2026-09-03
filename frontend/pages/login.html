@@ -18,7 +18,7 @@
 
     <!--FORMULÁRIO PARA PREENCHER OS DADOS JÁ CADASTRADOS-->
 
-    <form action="#" method="POST">
+    <form id="login-form" action="#" method="POST">
 
         <div class="container">
             <h2>Preencha seus dados para fazer login</h2>
@@ -51,5 +51,22 @@
         <p>Ainda não possui conta? <a href="/register">Cadastre-se</a></p>
     </div>
 
+    <script>
+        document.querySelector('#login-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const email = document.querySelector('#email').value.trim();
+  const password = document.querySelector('#senha').value;
+  const response = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
+
+  const data = await response.json();
+  alert(data.message); // Exibe o alerta com a mensagem do servidor
+
+    if (data.success && data.redirectTo) window.location.href = data.redirectTo;
+});
+    </script>
 </body>
 </html>

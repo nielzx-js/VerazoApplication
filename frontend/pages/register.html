@@ -18,7 +18,7 @@
 
     <!--Formulário para preencher os dados para Criar conta-->
     
-    <form action="#" method="POST">
+    <form id="register-form" action="#" method="POST">
         
         <div class="container">
             <h2>Preencha seus dados para começar</h2>
@@ -65,5 +65,27 @@
         <p>Já tem conta? <a href="/login">Faça login</a></p>
     </div>
 
+
+    <script>
+        document.querySelector('#register-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const nome = document.querySelector('#nome').value.trim();
+            const email = document.querySelector('#email').value.trim();
+            const password = document.querySelector('#senha').value;
+            const confirmPassword = document.querySelector('#confirmar-senha').value;
+
+            const response = await fetch('/api/auth/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nome, email, password, confirmPassword })
+            });
+            const data = await response.json();
+            alert(data.message);
+            if (data.success && data.redirectTo) window.location.href = data.redirectTo;
+        });
+    </script>
+
 </body>
+
 </html>

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/nielzx-js/VerazoApplication/issues"
   },
-  "homepage": "https://github.com/nielzx-js/VerazoApplication#readme"
+  "homepage": "https://github.com/nielzx-js/VerazoApplication#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.14.1"
+  }
 }
