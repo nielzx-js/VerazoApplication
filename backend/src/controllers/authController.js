@@ -1,4 +1,7 @@
-// backend/src/controllers/authController.js
+const UsuarioDAO = require('../config/database');
+
+
+
 const jwt = require('jsonwebtoken');
 
 // --- 1. REGISTRO / CADASTRO ---
