@@ -5,49 +5,69 @@ const UsuarioDAO = require('../config/database');
 const jwt = require('jsonwebtoken');
 
 // --- 1. REGISTRO / CADASTRO ---
-exports.register = (req, res) => {
-  const { email, password } = req.body;
+exports.register = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ message: 'Preencha todos os campos.' });
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Preencha todos os campos.' });
+    }
+
+    const usuarioExistente = await UsuarioDAO.buscarPorEmail(email);
+    if (usuarioExistente) {
+      return res.status(400).json({ success: false, message: 'email já cadastrado.' });
+    }
+
+    await UsuarioDAO.criar(email, password);
+
+    return res.status(201).json({ 
+      success: true, 
+      message: 'Usuário cadastrado com sucesso!', 
+      redirectTo: '/login' 
+    });
+  } catch (error) {
+    console.error('Erro no registro:', error);
+    return res.status(500).json({ success: false, message: 'Erro interno no servidor ao registrar.' });
   }
-
-  // Lógica de cadastro (simulação)
-  return res.status(201).json({ 
-    success: true, 
-    message: 'Usuário cadastrado com sucesso!', 
-    redirectTo: '/login' 
-  });
 };
 
 // --- 2. LOGIN ---
-exports.login = (req, res) => {
-  const { email, password } = req.body;
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-  // Lógica temporária de simulação de banco de dados
-  if (email === 'usuario@teste.com' && password === '123456') {
-    
-    // Cria o token assinado contendo dados públicos do usuário
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Preencha e-mail e senha.' });
+    }
+
+    const usuario = await UsuarioDAO.buscarPorEmail(email);
+
+    if (!usuario || usuario.senha !== password) {
+      return res.status(401).json({ success: false, message: 'Credenciais inválidas.' });
+    }
+
     const token = jwt.sign(
-      { email: email }, 
+      { id: usuario.id, email: usuario.email }, 
       process.env.JWT_SECRET || 'chave_secreta_provisoria', 
       { expiresIn: '1h' }
     );
 
-    // Anexa o token à resposta do servidor na forma de um Cookie Seguro
     res.cookie('token', token, {
       httpOnly: true,
-      secure: false, // troque para true quando o projeto tiver HTTPS
-      maxAge: 3600000 // expira em 1 hora (em ms)
+      secure: false,
+      maxAge: 3600000
     });
 
-    // Responde com status positivo e diz para onde o frontend deve ir
-    return res.status(200).json({ success: true, redirectTo: '/loading' });
+    return res.status(200).json({ 
+      success: true, 
+      message: 'Login realizado com sucesso!', 
+      redirectTo: '/loading' 
+    });
+  } catch (error) {
+    console.error('Erro no login:', error);
+    return res.status(500).json({ success: false, message: 'Erro interno no servidor ao fazer login.' });
   }
-
-  return res.status(401).json({ success: false, message: 'Credenciais inválidas' });
 };
-
 // --- 3. VALIDAÇÃO DO CÓDIGO DE REDEFINIÇÃO ---
 exports.verifyResetCode = (req, res) => {
   const { email, code } = req.body;
